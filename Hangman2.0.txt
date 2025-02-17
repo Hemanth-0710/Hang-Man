@@ -1,0 +1,424 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  #hangman game
+import random
+import time
+group = ('1','2','3','4')
+print("WELCOME TO HANGMAN!")
+while True:
+     print()
+     print('***MENU***')
+     print('1:fruits')
+     print('2:vegetables')
+     print('3:countries')
+     print('4:cities')
+    
+     print()
+     choose=input('enter an option:')
+    
+     if choose in group:
+        break
+    
+     else:
+        print()
+        print('option is not available')
+        
+if choose == '1':
+    fruits = ["apple", "banana", "grape", "orange", "mango","guava","pineapple","jackfruit","kiwi","cherry"]
+    choosen_word = random.choice(fruits)
+    print("you choose fruits")
+elif choose == '2':
+    vegetables = ["bringal","tomato","carrot","radish","capsicum","chilli","onion","ladysfinger","potato","pumpkin"]
+    choosen_word = random.choice(vegetables)
+    print("you choose vegetables")
+elif choose == '3':
+    countries = ["china","france","mexico","finland","nigeria","india","germany","russia","italy","brazil"]
+    choosen_word = random.choice(countries)
+    print("you choose country")
+else :
+    cities = ["kolkata","mumbai","hyderabad","delhi","chennai","bangalore","pune","jaipur","varanasi","agra"]
+    choosen_word = random.choice(cities)
+    print("you choose city")
+guessing = set()
+tries = 6
+while tries > 0:
+    display = "".join(letter if letter in guessing else " _ " for letter in choosen_word)
+    print("Word:", display)
+
+    if "_" not in display:
+        wins = ["Congratulations!","Welldone!","Bravo!","Fantastic job!","High five!","You did it"]
+        print(random.choice(wins))
+        print("you guessed the word:", choosen_word)
+        break
+
+    guess = input("Guess a letter: ").lower()
+
+    if guess in guessing:
+        print("You already guessed that letter.")
+        continue
+    
+    guessing.add(guess)
+    if guess not in choosen_word:
+        tries -= 1
+        print("Wrong guess!  Keep going!")
+        print(f"{tries} tries are left")
+    if tries == 6:
+        print('''
+        -+-------------+-
+                       |
+                       |
+                       |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 5 :
+        print('''
+        -+-------------+-
+                |      |
+                O      |
+                       |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 4 :
+        print('''
+        -+-------------+-
+                |      |
+                O      |
+                |      |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 3 :
+        print('''
+        -+-------------+-
+                |      |
+                O      |
+               /|      |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 2 :
+         print(r'''
+        -+-------------+-
+                |      |
+                O      |
+               /|\     |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 1 :
+         print(r'''
+        -+-------------+-
+                |      |
+                O      |
+               /|\     |
+               /       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 0 :
+         print(r'''
+        -+-------------+-
+                |      |
+                O      |
+               /|\     |
+               / \     |
+                       |
+                       |
+        _______________|_
+        ''')
+if tries == 0:
+    print("-----Game over-----")
+    print("The word was:",choosen_word)#hangman game
+import random
+import time
+group = ('1','2','3','4')
+print("WELCOME TO HANGMAN!")
+while True:
+     print()
+     print('***MENU***')
+     print('1:fruits')
+     print('2:vegetables')
+     print('3:countries')
+     print('4:cities')
+    
+     print()
+     choose=input('enter an option:')
+    
+     if choose in group:
+        break
+    
+     else:
+        print()
+        print('option is not available')
+        
+if choose == '1':
+    fruits = ["apple", "banana", "grape", "orange", "mango","guava","pineapple","jackfruit","kiwi","cherry"]
+    choosen_word = random.choice(fruits)
+    print("you choose fruits")
+elif choose == '2':
+    vegetables = ["bringal","tomato","carrot","radish","capsicum","chilli","onion","ladysfinger","potato","pumpkin"]
+    choosen_word = random.choice(vegetables)
+    print("you choose vegetables")
+elif choose == '3':
+    countries = ["china","france","mexico","finland","nigeria","india","germany","russia","italy","brazil"]
+    choosen_word = random.choice(countries)
+    print("you choose country")
+else :
+    cities = ["kolkata","mumbai","hyderabad","delhi","chennai","bangalore","pune","jaipur","varanasi","agra"]
+    choosen_word = random.choice(cities)
+    print("you choose city")
+guessing = set()
+tries = 6
+while tries > 0:
+    display = "".join(letter if letter in guessing else " _ " for letter in choosen_word)
+    print("Word:", display)
+
+    if "_" not in display:
+        wins = ["Congratulations!","Welldone!","Bravo!","Fantastic job!","High five!","You did it"]
+        print(random.choice(wins))
+        print("you guessed the word:", choosen_word)
+        break
+
+    guess = input("Guess a letter: ").lower()
+
+    if guess in guessing:
+        print("You already guessed that letter.")
+        continue
+    
+    guessing.add(guess)
+    if guess not in choosen_word:
+        tries -= 1
+        print("Wrong guess!  Keep going!")
+        print(f"{tries} tries are left")
+    if tries == 6:
+        print('''
+        -+-------------+-
+                       |
+                       |
+                       |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 5 :
+        print('''
+        -+-------------+-
+                |      |
+                O      |
+                       |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 4 :
+        print('''
+        -+-------------+-
+                |      |
+                O      |
+                |      |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 3 :
+        print('''
+        -+-------------+-
+                |      |
+                O      |
+               /|      |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 2 :
+         print(r'''
+        -+-------------+-
+                |      |
+                O      |
+               /|\     |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 1 :
+         print(r'''
+        -+-------------+-
+                |      |
+                O      |
+               /|\     |
+               /       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 0 :
+         print(r'''
+        -+-------------+-
+                |      |
+                O      |
+               /|\     |
+               / \     |
+                       |
+                       |
+        _______________|_
+        ''')
+if tries == 0:
+    print("-----Game over-----")
+    print("The word was:",choosen_word) #hangman game
+import random
+import time
+group = ('1','2','3','4')
+print("WELCOME TO HANGMAN!")
+while True:
+     print()
+     print('***MENU***')
+     print('1:fruits')
+     print('2:vegetables')
+     print('3:countries')
+     print('4:cities')
+    
+     print()
+     choose=input('enter an option:')
+    
+     if choose in group:
+        break
+    
+     else:
+        print()
+        print('option is not available')
+        
+if choose == '1':
+    fruits = ["apple", "banana", "grape", "orange", "mango","guava","pineapple","jackfruit","kiwi","cherry"]
+    choosen_word = random.choice(fruits)
+    print("you choose fruits")
+elif choose == '2':
+    vegetables = ["bringal","tomato","carrot","radish","capsicum","chilli","onion","ladysfinger","potato","pumpkin"]
+    choosen_word = random.choice(vegetables)
+    print("you choose vegetables")
+elif choose == '3':
+    countries = ["china","france","mexico","finland","nigeria","india","germany","russia","italy","brazil"]
+    choosen_word = random.choice(countries)
+    print("you choose country")
+else :
+    cities = ["kolkata","mumbai","hyderabad","delhi","chennai","bangalore","pune","jaipur","varanasi","agra"]
+    choosen_word = random.choice(cities)
+    print("you choose city")
+guessing = set()
+tries = 6
+while tries > 0:
+    display = "".join(letter if letter in guessing else " _ " for letter in choosen_word)
+    print("Word:", display)
+
+    if "_" not in display:
+        wins = ["Congratulations!","Welldone!","Bravo!","Fantastic job!","High five!","You did it"]
+        print(random.choice(wins))
+        print("you guessed the word:", choosen_word)
+        break
+
+    guess = input("Guess a letter: ").lower()
+
+    if guess in guessing:
+        print("You already guessed that letter.")
+        continue
+    
+    guessing.add(guess)
+    if guess not in choosen_word:
+        tries -= 1
+        print("Wrong guess!  Keep going!")
+        print(f"{tries} tries are left")
+    if tries == 6:
+        print('''
+        -+-------------+-
+                       |
+                       |
+                       |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 5 :
+        print('''
+        -+-------------+-
+                |      |
+                O      |
+                       |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 4 :
+        print('''
+        -+-------------+-
+                |      |
+                O      |
+                |      |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 3 :
+        print('''
+        -+-------------+-
+                |      |
+                O      |
+               /|      |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 2 :
+         print(r'''
+        -+-------------+-
+                |      |
+                O      |
+               /|\     |
+                       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 1 :
+         print(r'''
+        -+-------------+-
+                |      |
+                O      |
+               /|\     |
+               /       |
+                       |
+                       |
+        _______________|_
+        ''')
+    elif tries == 0 :
+         print(r'''
+        -+-------------+-
+                |      |
+                O      |
+               /|\     |
+               / \     |
+                       |
+                       |
+        _______________|_
+        ''')
+if tries == 0:
+    print("-----Game over-----")
+    print("The word was:",choosen_word)                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
